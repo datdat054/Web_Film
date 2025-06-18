@@ -11,6 +11,7 @@ const db = mysql.createConnection({
   database: "web1",
 });
 console.log(`${env}`);
+
 db.connect((err) => {
   if (err) {
     console.log("Lỗi kết nối:", err);
