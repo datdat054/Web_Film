@@ -18,6 +18,7 @@
 --
 -- Table structure for table `bug_reports`
 --
+CREATE DATABASE IF NOT EXISTS web1;
 
 DROP TABLE IF EXISTS `bug_reports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
