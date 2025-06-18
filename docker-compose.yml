@@ -1,7 +1,6 @@
 services:
   mysqldb:
     image: mysql:9
-    hostname: mysqldb
     container_name: mysqldb
     ports:
       - "3307:3306"
@@ -11,8 +10,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 123456
       MYSQL_DATABASE: web1
-    networks:
-      - web-network
     healthcheck:
       test:
         [
@@ -36,8 +33,6 @@ services:
     container_name: anime-web-frontend
     ports:
       - "3000:3000"
-    networks:
-      - web-network
     restart: on-failure
 
   backend:
@@ -48,8 +43,6 @@ services:
       - 3001:3001
     environment:
       MYSQL_HOST: mysqldb
-    networks:
-      - web-network
     depends_on:
       mysqldb:
         condition: service_healthy
